@@ -86,14 +86,14 @@ h6 {
 
 // ======================================================================================
 
-.hide {
-  display: none;
-}
-
 body {
   font-family: 'Arial';
   font-size: 16px;
-  background-color: rgb(230, 229, 229);
+  background-color: #e6e5e5;
+
+  &.lock {
+    overflow: hidden;
+  }
 }
 
 input {
@@ -146,9 +146,34 @@ input {
   }
 }
 
+.btn-red {
+  margin: 16px 0 0;
+  text-align: center;
+
+  border-color: #ce0000;
+
+  &:hover {
+    background-color: #ce0000;
+    color: #fff;
+  }
+}
+
 .film-find {
   width: 100%;
   margin: 0 0 12px;
+}
+
+.film-find-none {
+  text-align: center;
+  border: 1px solid grey;
+  color: rgba(128, 128, 128, 0.8);
+  border-radius: 3px;
+
+  display: none;
+
+  &.film-find-show {
+    display: block;
+  }
 }
 
 .film-list {
@@ -171,4 +196,70 @@ input {
   font-size: 8px;
   text-align: center;
   margin: 12px 0 -20px 0;
+}
+
+.modal-delete-all {
+  opacity: 0;
+  visibility: hidden;
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transition: .4s;
+
+  &.modal-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal-delete-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.modal-delete-content {
+  border: 2px solid #ce0000;
+  border-radius: 20px;
+  background-color: #e6e5e5;
+
+  padding: 50px 30px;
+
+  text-align: center;
+}
+
+.modal-delete-text {
+  font-size: 24px;
+  margin: 0 0 24px;
+}
+
+.modal-delete-btn-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-delete-btn {
+  // color: #fff;
+  margin: 0;
+}
+
+.btn-red-full {
+  border-color: #ce0000;
+  background-color: #ce0000;
+  color: #fff;
+
+  &:hover {
+    background-color: #ff0000;
+  }
+}
+
+.hide {
+  display: none;
 }
